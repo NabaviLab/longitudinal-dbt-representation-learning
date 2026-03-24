@@ -1,0 +1,6 @@
+script: src/tmi_graph/experiments/bcs_highres_pipeline.py
+args:
+  - --help
+env: {}
+cwd: .
+python: null

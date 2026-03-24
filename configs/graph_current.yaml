@@ -1,0 +1,6 @@
+script: src/tmi_graph/experiments/graph_current.py
+args:
+  - --help
+env: {}
+cwd: .
+python: null

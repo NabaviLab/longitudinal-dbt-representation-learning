@@ -1,0 +1,6 @@
+script: src/tmi_graph/experiments/pretrain_tr.py
+args:
+  - --help
+env: {}
+cwd: .
+python: null
