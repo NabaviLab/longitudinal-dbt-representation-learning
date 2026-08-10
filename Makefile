@@ -4,14 +4,15 @@ install:
 	pip install -e .
 
 install-dev:
-	pip install -e ".[dev,ml]"
+	python -m pip install -e ".[dev,dicom,graphs]"
 
 format:
-	black .
-	ruff format .
+	python -m black src tests
+	python -m ruff format src tests
 
 lint:
-	ruff check .
+	python -m ruff check src tests
+	python -m compileall -q src tests
 
 test:
-	pytest -q
+	PYTHONPATH=src python -m unittest discover -s tests -v

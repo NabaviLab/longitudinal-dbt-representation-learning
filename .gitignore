@@ -1,0 +1,25 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.coverage
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+build/
+dist/
+
+# Research data and generated artifacts
+*.dcm
+*.dicom
+*.tif
+*.tiff
+*.pt
+*.pth
+*.npz
+graphs/
+outputs/
+results/
+failed_views.tsv
+summary.csv
+run_*.log

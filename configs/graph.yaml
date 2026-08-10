@@ -1,0 +1,56 @@
+# Run-specific paths are intentionally supplied through --manifest and --output-dir.
+seed: 123
+label_col: Cancer
+spacing_mm: [1.0, 0.10, 0.10]
+clahe_clip: 0.01
+
+slic:
+  lin_scales_mm: [2.0, 3.5, 7.0]
+  K_min: [16000, 8000, 2000]
+  K_max: [64000, 32000, 8000]
+  K_cap_total: 100000
+  compactness: 1.0
+  sigma: 0.0
+
+knn:
+  k_fine: 6
+  k_med: 3
+  k_coarse: 0
+  batch: 4096
+
+embed:
+  enabled: true
+  dims: 128
+  max_side: 768
+  n_slices: 3
+  weights_path: null
+  amp: true
+
+qc:
+  min_tissue_coverage: 0.95
+  min_lcc_frac: 0.85
+  min_avg_degree: 2.0
+
+parallel:
+  enabled: false
+  num_gpus: 1
+
+augmix:
+  n_per_view: 2
+  severity: 3
+  width: 3
+  depth: -1
+  alpha: 1.0
+  m: 0.2
+
+diffusion:
+  n_per_view: 1
+  sigma: 0.05
+  denoiser: nlmeans
+  nlmeans_h: 0.06
+
+adversarial:
+  n_per_view: 1
+  eps: 0.5
+  steps: 3
+  norm: linf

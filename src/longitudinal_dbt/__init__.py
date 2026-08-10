@@ -1,4 +1,4 @@
-"""Top-level package for tmi-graph."""
+"""Longitudinal DBT preprocessing and graph construction."""
 
 from __future__ import annotations
 

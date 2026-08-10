@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the repository and the associated research article."
+title: "Longitudinal DBT Representation Learning"
+type: software
+authors:
+  - name: "Nabavi Lab"
+version: 0.1.0
+date-released: 2026-08-10
+repository-code: "https://github.com/NabaviLab/longitudinal-dbt-representation-learning"
+license: MIT

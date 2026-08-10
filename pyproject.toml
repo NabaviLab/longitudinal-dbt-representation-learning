@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "longitudinal-dbt-representation-learning"
+version = "0.1.0"
+description = "DICOM conversion and multiscale graph construction for longitudinal DBT representation learning"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {file = "LICENSE"}
+authors = [{name = "Nabavi Lab"}]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+]
+dependencies = [
+  "numpy>=1.23",
+  "pandas>=1.5",
+  "PyYAML>=6.0",
+  "tifffile>=2023.7.10",
+]
+
+[project.optional-dependencies]
+dicom = ["SimpleITK>=2.2"]
+graphs = [
+  "opencv-python-headless>=4.8",
+  "scikit-image>=0.21",
+  "scipy>=1.10",
+  "torch>=2.1",
+  "torch-geometric>=2.4",
+  "torchvision>=0.16",
+]
+dev = [
+  "black>=24.4",
+  "ruff>=0.5",
+]
+
+[project.scripts]
+longitudinal-dbt = "longitudinal_dbt.cli:main"
+
+[project.urls]
+Repository = "https://github.com/NabaviLab/longitudinal-dbt-representation-learning"
+Issues = "https://github.com/NabaviLab/longitudinal-dbt-representation-learning/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+ignore = ["E501"]
